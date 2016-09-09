@@ -8,6 +8,7 @@
     
     
     
+    /store/group/dpg_ecal/comm_ecal
     
     python scanAndPlot.py --inputFolder   /tmp/amassiro/eos/cms/store/group/dpg_ecal/                 --outputFile mytest_ecal.html
     python scanAndPlot.py --inputFolder   /tmp/amassiro/eos/cms/store/group/dpg_ecal/comm_ecal/       --outputFile mytest_common_ecal.html

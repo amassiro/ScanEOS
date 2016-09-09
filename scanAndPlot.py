@@ -51,15 +51,15 @@ if __name__ == '__main__':
     
     os.chdir(opt.inputFolder)
 
-    toExec = "du -hs *  >  " + cwd + "/temp.txt" 
+    toExec = "du -hs *  >  " + cwd + "/temp" + opt.outputFile + ".txt" 
     os.system(toExec)
 
     os.chdir(cwd)
 
 
 
-
-    iFile = open ("temp.txt")
+    nameOfFile = "temp" + opt.outputFile + ".txt"
+    iFile = open (nameOfFile)
 
     information = {}
      
@@ -67,12 +67,16 @@ if __name__ == '__main__':
       for line in iFile:
         #print "line = ", line
         if len(line.split()) > 1 :
+          
+          print " >> ", line
           ### 77T     archival
           space, name  = line.rstrip().split()
-          space = space.replace("T","000000")
-          space = space.replace("G","000")
-          space = space.replace("K","")
-          information[ name  ] = float(space) / 1000000.
+          space = space.replace("T","*1000000000")
+          space = space.replace("G","*1000000")
+          space = space.replace("M","*1000000")
+          space = space.replace("K","")     
+          space = eval(space)
+          information[ name  ] = float(space) / 1000000000.
             
     print " information = ", information
 

@@ -1,5 +1,10 @@
 # ScanEOS
 
+where:
+
+    /afs/cern.ch/user/a/amassiro/work/Utils/ScanEOS
+
+how:
 
     python scanAndPlot.py --inputFolder /tmp/amassiro/eos/cms/store/group/phys_higgs/
     python scanAndPlot.py --inputFolder /tmp/amassiro/eos/cms/store/group/phys_higgs/    --outputFile mytest.html

@@ -6,6 +6,10 @@ where:
 
 how:
 
+
+    python scanAndPlot.py --inputFolder /eos/cms/store/group/   --outputFile mytest_full.html
+
+
     python scanAndPlot.py --inputFolder /tmp/amassiro/eos/cms/store/group/phys_higgs/
     python scanAndPlot.py --inputFolder /tmp/amassiro/eos/cms/store/group/phys_higgs/    --outputFile mytest.html
     python scanAndPlot.py --inputFolder /tmp/amassiro/eos/cms/store/group/phys_higgs/cmshww/    --outputFile mytest_cmshww.html

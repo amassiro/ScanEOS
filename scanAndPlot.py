@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 import json
 import sys
@@ -19,13 +19,13 @@ import os
 
 
 if __name__ == '__main__':
-    print '''
+    print ('''
 --------------------------------------------------------------------------------------------------
 
     Scan resources on EOS
  
 --------------------------------------------------------------------------------------------------
-'''    
+''')
 
     usage = 'usage: %prog [options]'
     parser = optparse.OptionParser(usage)
@@ -40,18 +40,18 @@ if __name__ == '__main__':
     ROOT.gROOT.SetBatch()
 
 
-    print " inputFolder      = ", opt.inputFolder
-    print " outputFile       = ", opt.outputFile
+    print (" inputFolder      = ", opt.inputFolder)
+    print (" outputFile       = ", opt.outputFile)
 
     toExec = "ls " + opt.inputFolder
     os.system(toExec)
 
     cwd = os.getcwd()
-    print "cwd  = ", cwd
+    print ("cwd  = ", cwd)
     
     os.chdir(opt.inputFolder)
 
-    toExec = "du -hs *  >  " + cwd + "/temp" + opt.outputFile + ".txt" 
+    toExec = "LC_ALL=C du -hs *  >  " + cwd + "/temp" + opt.outputFile + ".txt" 
     os.system(toExec)
 
     os.chdir(cwd)
@@ -65,20 +65,20 @@ if __name__ == '__main__':
      
     with iFile:
       for line in iFile:
-        #print "line = ", line
+        #print ("line = ", line)
         if len(line.split()) > 1 :
           
-          print " >> ", line
+          print (" >> ", line)
           ### 77T     archival
           space, name  = line.rstrip().split()
           space = space.replace("T","*1000000000")
           space = space.replace("G","*1000000")
-          space = space.replace("M","*1000000")
+          space = space.replace("M","*1000")
           space = space.replace("K","")     
           space = eval(space)
           information[ name  ] = float(space) / 1000000000.
             
-    print " information = ", information
+    print (" information = ", information)
 
     oFile = open(opt.outputFile, 'w')
     #oFile.write('// to copy\n')
@@ -136,6 +136,6 @@ if __name__ == '__main__':
 
 
   
-    print " outputFile       = ", opt.outputFile
+    print (" outputFile       = ", opt.outputFile)
 
 

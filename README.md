@@ -11,6 +11,8 @@ NB: fast version: fastScanAndPlot.py, on EOS the size of each sub-folder is take
     eos fileinfo /eos/cms/store/group/phys_higgs/cmshww/
     python3 fastScanAndPlot.py --inputFolder /eos/cms/store/group/phys_higgs/cmshww/   --outputFile mytest_cmshww.html
 
+NB: it also writes a nicer page (legend sorted by size, with TB) in mytest_cmshww_nice.html (or use --outputFileNice)
+
 
 
     python3 scanAndPlot.py --inputFolder /eos/cms/store/group/   --outputFile mytest_full.html

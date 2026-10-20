@@ -6,6 +6,12 @@ where:
 
 how:
 
+NB: fast version: fastScanAndPlot.py, on EOS the size of each sub-folder is taken from "Treesize" of "eos fileinfo", otherwise it falls back to "du -sb" (slow):
+
+    eos fileinfo /eos/cms/store/group/phys_higgs/cmshww/
+    python3 fastScanAndPlot.py --inputFolder /eos/cms/store/group/phys_higgs/cmshww/   --outputFile mytest_cmshww.html
+
+
 
     python3 scanAndPlot.py --inputFolder /eos/cms/store/group/   --outputFile mytest_full.html
 
